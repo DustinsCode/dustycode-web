@@ -1,11 +1,13 @@
+import { Outlet } from "react-router";
+import Header from "./components/header";
 
 function App() {
-
-  return (
-    <div>
-      Vite App
-    </div>
-  )
+    return (
+        <div className="h-full">
+            <Header />
+            <Outlet />
+        </div>
+    );
 }
 
-export default App
+export default App;
