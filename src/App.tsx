@@ -5,7 +5,9 @@ function App() {
     return (
         <div className="h-full">
             <Header />
-            <Outlet />
+            <div className="mt-[52px]">
+                <Outlet />
+            </div>
         </div>
     );
 }
