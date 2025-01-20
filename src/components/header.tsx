@@ -1,11 +1,19 @@
+import { useWindowScroll } from "@uidotdev/usehooks";
 import clsx from "clsx";
 import { motion } from "motion/react";
 import { NavLink, useLocation } from "react-router";
 
 export default function Header() {
+    const [{ y }] = useWindowScroll();
+
     return (
         <nav className="w-full sticky top-0 z-10 p-3">
-            <ul className="flex justify-center my-3 gap-3">
+            <ul
+                className={clsx(
+                    y && y > 80 ? "bg-slate-500/90 transition-opacity" : "",
+                    "flex justify-center my-3 gap-3 rounded-lg ease-in-out"
+                )}
+            >
                 <HeaderItem name="Home" route="/" />
                 <HeaderItem name="About" route="/about" />
                 <HeaderItem name="Contact" route="/contact" />

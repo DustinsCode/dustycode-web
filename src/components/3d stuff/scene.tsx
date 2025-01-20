@@ -9,7 +9,7 @@ import { useThree } from "@react-three/fiber";
 import { useEffect } from "react";
 
 export default function Scene() {
-    const font = useFont("src/assets/Dosis_Regular.json");
+    const font = useFont("src/assets/fonts/Dosis_Regular.json");
     const { size, camera, scene } = useThree();
 
     useEffect(() => {
