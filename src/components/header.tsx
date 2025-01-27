@@ -11,7 +11,7 @@ export default function Header() {
             <div className="w-min">
                 <ul
                     className={clsx(
-                        y && y > 80 ? "bg-slate-500/90 transition-opacity" : "",
+                        y && y > 80 ? "bg-slate-500/90 transition-colors ease-in-out duration-150" : "",
                         "flex justify-center my-3 gap-3 rounded-lg ease-in-out p-2"
                     )}
                 >

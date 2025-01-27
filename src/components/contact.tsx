@@ -61,7 +61,7 @@ export default function Contact() {
                                         DustinsCode
                                     </span>
                                 </a>
-                                <span className="text-xs invisible 2xl:visible">
+                                <span className="text-xs hidden 2xl:block">
                                     (if you happen to own the dustycode
                                     username, I'd be more than grateful to take
                                     it off of your hands)
@@ -188,6 +188,7 @@ export default function Contact() {
                                 <button
                                     type="submit"
                                     disabled={!canSubmit || isSubmitted}
+                                    className="p-3 rounded-sm bg-muted-green w-fit ml-auto"
                                 >
                                     {isSubmitting
                                         ? "Sending..."

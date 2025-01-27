@@ -1,6 +1,16 @@
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
+import marby_1 from "../assets/images/marby_1.jpg"
+import marby_2 from "../assets/images/marby_2.png"
+import marby_3 from "../assets/images/marby_3.jpg"
+import marby_4 from "../assets/images/marby_4.jpg"
+import marby_5 from "../assets/images/marby_5.jpg"
+import marby_6 from "../assets/images/marby_6.jpg"
+import marby_7 from "../assets/images/marby_7.jpg"
+import marby_8 from "../assets/images/marby_8.jpg"
+import marby_9 from "../assets/images/marby_9.jpg"
+
 
 type Photo = {
     src: string;
@@ -11,47 +21,47 @@ type Photo = {
 export default function Marby() {
     const photos = [
         {
-            src: "marby_1.jpg",
+            src: marby_1,
             alt: "Marby the cat in my lap with her tongue out",
             ratio: "9/16"
         },
         {
-            src: "marby_2.png",
+            src: marby_2,
             alt: "Marby the cat standing up looking like she's dancing",
             ratio: "9/16"
         },
         {
-            src: "marby_3.jpg",
+            src: marby_3,
             alt: "Marby the cat sitting with her tongue out a tiny bit",
             ratio: "16/9"
         },
         {
-            src: "marby_4.jpg",
+            src: marby_4,
             alt: "Marby the cat looking majestic in the sunlight",
             ratio: "16/9"
         },
         {
-            src: "marby_5.jpg",
+            src: marby_5,
             alt: "Marby the cat from directly above",
             ratio: "1/1"
         },
         {
-            src: "marby_6.jpg",
+            src: marby_6,
             alt: "Marby the cat with her paws on someone's knee rubbing her head in their hand",
             ratio: "9/16"
         },
         {
-            src: "marby_7.jpg",
+            src: marby_7,
             alt: "Marby the cat looking concerned while I am behind her with my mouth wide open",
             ratio: "1/1"
         },
         {
-            src: "marby_8.jpg",
+            src: marby_8,
             alt: "Marby the cat close up with a sparkle in her eye and her tooth sticking out",
             ratio: "1/1"
         },
         {
-            src: "marby_9.jpg",
+            src: marby_9,
             alt: "Marby the cat close up sniffing the camera and it's blurry",
             ratio: "16/9"
         }
@@ -111,7 +121,7 @@ export default function Marby() {
                                     className={`aspect-${photo.ratio} overflow-hidden rounded-lg`}
                                 >
                                     <img
-                                        src={`src/assets/images/${photo.src}`}
+                                        src={photo.src}
                                         alt={photo.alt}
                                         className={clsx(
                                             photo.src === "marby_2.png"

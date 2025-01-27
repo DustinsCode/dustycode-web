@@ -1,11 +1,11 @@
-import { Canvas } from "@react-three/fiber";
 import { useIntersectionObserver } from "@uidotdev/usehooks";
 import { useEffect } from "react";
-import Scene from "../components/3d stuff/scene";
 import About from "../components/about";
 import Contact from "../components/contact";
-import { useNavStore } from "../store/store";
 import Section from "../components/section";
+import { useNavStore } from "../store/store";
+import { Canvas } from "@react-three/fiber";
+import Scene from "../components/3d stuff/scene";
 
 export default function Home() {
     const setActive = useNavStore((state) => state.setActive);

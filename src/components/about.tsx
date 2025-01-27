@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
 import { useNavigate } from "react-router";
+import marby_icon from "../assets/marby_icon.png";
+import marby_and_i from "../assets/images/marby-and-i.jpg";
 
 export default function About() {
     const navigate = useNavigate();
@@ -9,7 +11,7 @@ export default function About() {
             <div className="flex flex-col gap-4 mx-5 w-full md:w-1/2 md:items-center">
                 <div className="flex justify-center">
                     <img
-                        src="src/assets/images/marby-and-i.jpg"
+                        src={marby_and_i}
                         className="size-40 rounded-full"
                         alt="A picture of me and my cat, Marby"
                     />
@@ -32,7 +34,7 @@ export default function About() {
                         onClick={() => {
                             navigate("/marby");
                         }}
-                        src="src/assets/marby_icon.png"
+                        src={marby_icon}
                     />
                     <h2 className="text-xl">Fun Facts!</h2>
                     <ul className="list-disc pl-3">

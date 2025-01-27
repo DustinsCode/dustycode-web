@@ -6,9 +6,12 @@ import {
     useFont
 } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
+// import dosis from "../../assets/fonts/Dosis_Regular.json";
+// import { FontLoader } from "three-stdlib";
 
 export default function Scene() {
-    const font = useFont("src/assets/fonts/Dosis_Regular.json");
+    const font = useFont("/Dosis_Regular.json");
+    // const font = new FontLoader().parse(dosis);
 
     // using w / 6 for the size property of the Text3D isn't a perfect solution,
     // as it's not completely responsive with page resizing, as the text will
