@@ -6,25 +6,21 @@ import {
     useFont
 } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
-import { useEffect } from "react";
 
 export default function Scene() {
     const font = useFont("src/assets/fonts/Dosis_Regular.json");
-    const { size, camera, scene } = useThree();
 
-    useEffect(() => {
-        // TODO: make it auto resize on screen resize
-        // camera.zoom = size.width > 1024 || size.width < 768 ? 100 : 50
-        camera.updateProjectionMatrix();
-        scene.updateMatrixWorld();
-    }, [size, camera]);
+    // using w / 6 for the size property of the Text3D isn't a perfect solution,
+    // as it's not completely responsive with page resizing, as the text will
+    // not re-center until a page refresh, but it's good enough for now
+    const { width: w } = useThree((state) => state.viewport);
 
     return (
         <Center rotation={[-0.5, -0.25, 0]}>
             <Float rotationIntensity={2}>
                 <Text3D
                     font={font.data}
-                    size={window.innerWidth < 700 ? 0.5 : 1.0}
+                    size={w / 6}
                     curveSegments={32}
                     bevelEnabled
                     bevelSize={0.03}

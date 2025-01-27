@@ -95,7 +95,7 @@ export default function Marby() {
                     Uh oh! You friggin dummy, you just got Marby'd!
                 </h1>
                 <nav>
-                    <NavLink className='text-blue-900 hover:underline' to={'/about'}>Go back?</NavLink>
+                    <NavLink className='text-blue-900 hover:underline' to={'/'}>Return to safety?</NavLink>
                 </nav>
             </header>
             <div className="flex gap-4 md:w-2/3 md:mx-0 mx-4">
@@ -113,7 +113,6 @@ export default function Marby() {
                                     <img
                                         src={`src/assets/images/${photo.src}`}
                                         alt={photo.alt}
-                                        // className="object-cover w-full h-full"
                                         className={clsx(
                                             photo.src === "marby_2.png"
                                                 ? "animate-scale-x-back-forth"
