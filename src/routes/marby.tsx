@@ -124,7 +124,7 @@ export default function Marby() {
                                         src={photo.src}
                                         alt={photo.alt}
                                         className={clsx(
-                                            photo.src === "marby_2.png"
+                                            photo.src === marby_2
                                                 ? "animate-scale-x-back-forth"
                                                 : "",
                                             "object-cover w-full h-full"

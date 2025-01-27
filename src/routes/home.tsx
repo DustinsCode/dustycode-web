@@ -6,8 +6,10 @@ import Section from "../components/section";
 import { useNavStore } from "../store/store";
 import { Canvas } from "@react-three/fiber";
 import Scene from "../components/3d stuff/scene";
+import { useLocation } from "react-router";
 
 export default function Home() {
+    const location = useLocation();
     const setActive = useNavStore((state) => state.setActive);
     const [ref, entry] = useIntersectionObserver({
         threshold: 1,
@@ -20,6 +22,17 @@ export default function Home() {
             setActive("Home");
         }
     });
+
+    useEffect(() => {
+        const hash = location.hash;
+
+        if (hash) {
+            const element = document.getElementById(hash.substring(1));
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }, [location.hash]);
 
     return (
         <div className="max-w-dvw">
@@ -55,7 +68,7 @@ export default function Home() {
                 <Section id="about" name="About">
                     <About />
                 </Section>
-                <Section id="contact" name="Contact" >
+                <Section id="contact" name="Contact">
                     <Contact />
                 </Section>
             </div>

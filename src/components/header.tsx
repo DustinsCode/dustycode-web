@@ -15,9 +15,9 @@ export default function Header() {
                         "flex justify-center my-3 gap-3 rounded-lg ease-in-out p-2"
                     )}
                 >
-                    <HeaderItem name="Home" route="#home" />
-                    <HeaderItem name="About" route="#about" />
-                    <HeaderItem name="Contact" route="#contact" />
+                    <HeaderItem name="Home" route="/#home" />
+                    <HeaderItem name="About" route="/#about" />
+                    <HeaderItem name="Contact" route="/#contact" />
                 </ul>
             </div>
         </nav>
