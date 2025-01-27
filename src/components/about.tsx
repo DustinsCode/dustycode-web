@@ -11,6 +11,7 @@ export default function About() {
                     <img
                         src="src/assets/images/marby-and-i.jpg"
                         className="size-40 rounded-full"
+                        alt="A picture of me and my cat, Marby"
                     />
                 </div>
                 <h1 className="text-2xl w-full text-left">About me!</h1>
@@ -27,6 +28,7 @@ export default function About() {
                                 ease: "easeInOut"
                             }
                         }}
+                        alt="Marby the cat peeking out. Try clicking on her!"
                         onClick={() => {
                             navigate("/marby");
                         }}
