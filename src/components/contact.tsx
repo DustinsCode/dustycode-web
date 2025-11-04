@@ -1,4 +1,3 @@
-import emailjs from "@emailjs/browser";
 import { FieldApi, useForm } from "@tanstack/react-form";
 import { contactFormSchema } from "../types/contact";
 
@@ -10,20 +9,17 @@ export default function Contact() {
             message: ""
         },
         onSubmit: async ({ value }) => {
+            await delay(1500);
             console.log(value);
-            await emailjs.send(
-                import.meta.env.VITE_EMAIL_SERVICE_KEY,
-                import.meta.env.VITE_EMAIL_TEMPLATE_ID,
-                value,
-                {
-                    publicKey: import.meta.env.VITE_EMAIL_PUBLIC_KEY
-                }
-            );
         },
         validators: {
             onChange: contactFormSchema
         }
     });
+
+    function delay(ms: number) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    }
 
     return (
         <div className="flex justify-center">
@@ -98,8 +94,16 @@ export default function Contact() {
                     </ul>
                 </div>
                 <div className="bg-orangeish/50 rounded-lg p-4 divide-solid md:w-full">
+                    <h2 className="text-xl text-slate-600">
+                        This is where I <i>had</i> a nice form, but someone
+                        decided to abuse it, so I took it away.
+                    </h2>
+                    <span className="text-xl text-slate-600">
+                        Go ahead and fill it out if you'd like, but it will
+                        simply disappear into the ether.
+                    </span>
                     <form
-                        className="flex flex-col gap-1"
+                        className="flex flex-col gap-1 mt-4"
                         onSubmit={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
@@ -193,7 +197,7 @@ export default function Contact() {
                                     {isSubmitting
                                         ? "Sending..."
                                         : isSubmitted
-                                        ? "Sent!"
+                                        ? "Sent! (not really though)"
                                         : "Send!"}
                                 </button>
                             )}
